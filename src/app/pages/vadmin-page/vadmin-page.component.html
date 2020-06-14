@@ -1,0 +1,394 @@
+<section class="grocery-admin-section">
+  <div class="grocery-admin-side-nav navbar">
+    <div class="grocery-admin-profile">
+      <div class="grocery-admin-avatar">
+        <img src="../../../assets/profile_user.jpg">
+      </div>
+    </div>
+    <div class="grocery-admin-side-nav-body">
+      <a class="grocery-admin-side-nav-item" [ngClass]="{ 'is-active': this.isInventory }" (click)="Inventory()">Inventory</a>
+      <a class="grocery-admin-side-nav-item" [ngClass]="{ 'is-active': this.isProfile }" (click)="Profile()">Profile</a>
+    </div>
+    <div class="grocery-admin-logout">
+      <i class="fas fa-sign-out-alt"></i><span>Logout</span>
+    </div>
+  </div>
+  <section class="grocery-admin-inner-section">
+    <div class="navbar">
+      <div class="grocery-search-bar-holder">
+        <input class="grocery-search-bar input" placeholder="Type here to search">
+        <i class="fas fa-search grocery-search-ico"></i>
+      </div>
+      <div class="navbar-end">
+        <div class="grocery-view-group">
+          <i class="fas fa-th" [ngClass]="{ 'is-active': this.isGird }" (click)="this.Grid()"></i>
+          <i class="fas fa-th-list" [ngClass]="{ 'is-active': this.isList }" (click)="this.List()"></i>
+        </div>
+      </div>
+    </div>
+    <div class="grocery-admin-section-contents">
+      <div class="grocery-product-add">
+        <i class="fas fa-plus"></i>
+      </div>
+      <div class="grocery-admin-section-grid" *ngIf="this.isGird" >
+        <div class="grocery-product-card">
+          <div class="grocery-product-card-overlay">
+            <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+            <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+          </div>
+          <div class="grocery-product-thumbnail">
+            <img src="../../../assets/profile_user.jpg">
+          </div>
+          <div class="grocery-product-card-body">
+            <div class="grocery-product-name">Kit Kat</div>
+            <div class="grocery-product-category">Snacks</div>
+            <div class="grocery-product-stock">
+              <i class="fas fa-boxes"></i><span>200</span>
+            </div>
+          </div>
+        </div>
+        <div class="grocery-product-card">
+          <div class="grocery-product-card-overlay">
+            <i class="fas fa-edit is-warning"></i>
+            <i class="fas fa-trash-alt is-danger"></i>
+          </div>
+          <div class="grocery-product-thumbnail">
+            <img src="../../../assets/profile_user.jpg">
+          </div>
+          <div class="grocery-product-card-body">
+            <div class="grocery-product-name">Kit Kat</div>
+            <div class="grocery-product-category">Snacks</div>
+            <div class="grocery-product-stock">
+              <i class="fas fa-boxes"></i><span>200</span>
+            </div>
+          </div>
+        </div>
+        <div class="grocery-product-card">
+          <div class="grocery-product-card-overlay">
+            <i class="fas fa-edit is-warning"></i>
+            <i class="fas fa-trash-alt is-danger"></i>
+          </div>
+          <div class="grocery-product-thumbnail">
+            <img src="../../../assets/profile_user.jpg">
+          </div>
+          <div class="grocery-product-card-body">
+            <div class="grocery-product-name">Kit Kat</div>
+            <div class="grocery-product-category">Snacks</div>
+            <div class="grocery-product-stock">
+              <i class="fas fa-boxes"></i><span>200</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grocery-admin-section-table" *ngIf="this.isList" >
+        <div class="grocery-admin-table">
+          <div class="grocery-admin-table-header">
+            <div class="grocery-admin-table-data is-5">S. No</div>
+            <div class="grocery-admin-table-data is-5"></div>
+            <div class="grocery-admin-table-data is-20">Product Name</div>
+            <div class="grocery-admin-table-data is-30">Product Category</div>
+            <div class="grocery-admin-table-data is-10">Unit</div>
+            <div class="grocery-admin-table-data is-10">Quantity</div>
+            <div class="grocery-admin-table-data is-10">Stock</div>
+            <div class="grocery-admin-table-data is-10">Mrp</div>
+          </div>
+          <div class="grocery-admin-table-contents" #tableContents>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+            <div class="grocery-admin-table-row">
+              <div class="grocery-admin-table-row-overlay">
+                <span class="is-warning"><i class="fas fa-edit"></i>Edit</span>
+                <span class="is-danger"><i class="fas fa-trash-alt"></i>Delete</span>
+              </div>
+              <div class="grocery-admin-table-data align-center is-5">1.</div>
+              <div class="grocery-admin-table-data align-center is-5">
+                <img src="../../../assets/profile_user.jpg">
+              </div>
+              <div class="grocery-admin-table-data is-20">Kit Kat</div>
+              <div class="grocery-admin-table-data is-30">Snacks</div>
+              <div class="grocery-admin-table-data is-10">gms</div>
+              <div class="grocery-admin-table-data is-10">250</div>
+              <div class="grocery-admin-table-data is-10">50</div>
+              <div class="grocery-admin-table-data is-10">10</div>
+            </div>
+          </div>
+        </div>
+        <div class="grocery-pagination">
+          <a><i class="fas fa-angle-double-left"></i></a>
+          <span>1</span>
+          <a><i class="fas fa-angle-double-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
